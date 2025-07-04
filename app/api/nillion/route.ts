@@ -1,8 +1,8 @@
 import { Keypair, NilauthClient, PayerBuilder } from '@nillion/nuc'
 import { ReadBuilderProfileResponse, SecretVaultBuilderClient } from '@nillion/secretvaults'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
-export const testnetNillionClusterConfig: NillionClusterConfig = {
+const testnetNillionClusterConfig = {
   chain: 'http://rpc.testnet.nilchain-rpc-proxy.nilogy.xyz',
   auth: 'https://nilauth.sandbox.app-cluster.sandbox.nilogy.xyz',
   dbs: 'https://nildb-stg-n1.nillion.network,https://nildb-stg-n2.nillion.network,https://nildb-stg-n3.nillion.network'.split(
@@ -69,7 +69,7 @@ const registerBuilder = async (
 }
 
 const makeNillionBuilder = async () => {
-  const { builderKeypair } = await initNillionAuth(process.env.NILLION_PRIVATE_KEY as string)
+  const { builderKeypair } = await initNillionAuth(process.env.NIL_BUILDER_PRIVATE_KEY as string)
 
   //Step 3: Create builder client
   const builder = await SecretVaultBuilderClient.from({
@@ -92,7 +92,7 @@ const makeNillionBuilder = async () => {
   }
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   const { builder } = await makeNillionBuilder()
   const collections = await builder.readCollections()
   console.log('collections', collections)
