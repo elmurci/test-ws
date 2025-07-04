@@ -70,6 +70,7 @@
     "@ardrive/turbo-sdk": "latest",
     "@nillion/nuc": "latest",
     "@nillion/secretvaults": "0.1.0-rc.5",
+    "dotenv": "^17.0.1",
     "pino-pretty": "^13.0.0"
   },
   "config": {
