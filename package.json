@@ -12,7 +12,11 @@
     "bin"
   ],
   "scripts": {
-    "build": "tsup-node",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:tsup": "tsup-node",
     "build:watch": "tsup-node --watch",
     "clean": "rimraf dist",
     "commit": "cz",
@@ -20,9 +24,8 @@
     "compile": "tsc",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
-    "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "tsx ./src/index.ts",
+    "start:tsx": "tsx ./src/index.ts",
     "start:node": "node ./bin/run",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -45,6 +48,7 @@
     "@types/mime-types": "^3.0.1",
     "@types/node": "^20.19.0",
     "@types/prompts": "^2.4.9",
+    "@types/react": "19.1.8",
     "@types/signale": "^1.4.7",
     "@types/yargs": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -70,7 +74,12 @@
     "@ardrive/turbo-sdk": "latest",
     "@nillion/nuc": "latest",
     "@nillion/secretvaults": "0.1.0-rc.5",
-    "pino-pretty": "^13.0.0"
+    "dotenv": "^17.0.1",
+    "next": "^15.3.5",
+    "pino": "^9.7.0",
+    "pino-pretty": "^13.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "config": {
     "commitizen": {
