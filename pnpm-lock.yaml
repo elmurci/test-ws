@@ -26,9 +26,6 @@ importers:
       pino:
         specifier: ^9.7.0
         version: 9.7.0
-      pino-pretty:
-        specifier: ^13.0.0
-        version: 13.0.0
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -102,6 +99,9 @@ importers:
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.19.4)
+      pino-pretty:
+        specifier: ^13.0.0
+        version: 13.0.0
       prettier:
         specifier: ^3.5.3
         version: 3.6.2

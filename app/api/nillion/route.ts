@@ -94,8 +94,7 @@ const makeNillionBuilder = async () => {
 
 export async function GET() {
   const { builder } = await makeNillionBuilder()
-  const collections = await builder.readCollections()
-  console.log('collections', collections)
-
+  // const collections = await builder.readCollections()
+  // console.log('collections', collections)
   return NextResponse.json({ message: 'success', foo: 'bar' }, { status: 200 })
 }
